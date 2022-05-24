@@ -1,0 +1,11 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block content %}
+<ul>
+	{% for website in websites %}
+	<li>{{ website.id }} | <span class="my_url">{{ website.site_url }}</span> | time interval: {{ website.time_interval }} </li>
+	{% empty %}
+	<li>There is no url on your list.</li>
+	{% endfor %}
+</ul>
+{% endblock %}

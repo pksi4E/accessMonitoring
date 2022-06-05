@@ -2,6 +2,14 @@ h1 {
 	font-size: 40px;
 }
 .my_url {
-	font-weight: bold;
+	font-weight: italic;
 	color: purple;
+}
+div {
+	color: blue;
+	border: 4px solid;
+	background-color: red;
+}
+#appName {
+	font-family: Verdana, sans-serif;
 }

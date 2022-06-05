@@ -1,0 +1,15 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block sciezka %}
+	<p>
+		<a href="{% url 'monitoring:monitoring_url' %}">All websites</a>
+		<a href="{% url 'monitoring:with_errors_url' %}">With errors</a>
+	</p>
+{% endblock sciezka %}
+{% block content %}
+	<form method="post" action="{% url 'monitoring:add_website_url' %}">
+		{% csrf_token %}
+		{{ form }}
+		<button name="submit">Add</button>
+	</form>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block content %}
+	<p><a href="{% url 'monitoring:monitoring_url' %}">Back to monitoring</a></p>
+	<h2>Modify website:</h2>
+	<form action="{% url 'monitoring:modify_website_url' website.id%}" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<button name="submit">Confirm changes</button>
+	</form>
+{% endblock content %}

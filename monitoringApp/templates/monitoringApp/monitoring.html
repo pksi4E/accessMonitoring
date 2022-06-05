@@ -1,0 +1,30 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block sciezka %}
+	<p>
+		<a href="{% url 'monitoring:monitoring_url' %}">All websites</a>
+		<a href="{% url 'monitoring:with_errors_url' %}">With errors</a>
+	</p>
+{% endblock sciezka %}
+{% block content %}
+	<h2>Websites:</h2>
+	<p><a href="{% url 'monitoring:add_website_url' %}">Add website</a></p>
+	<ul>
+		{% for website in websites %}
+		<li>
+	        {{ website.id }} |
+	        <a href="{% url 'monitoring:website_history_url' website.id %}"><span class="my_url">{{ website.site_url }}</span></a> |
+	        time interval: {{ website.time_interval }}
+	        
+			<a href="{% url 'monitoring:modify_website_url' website.id %}">
+				<button>Modify</button>
+			</a>
+			<a href="{% url 'monitoring:delete_website_url' website.id %}">
+				<button>Delete</button>
+			</a>
+	    </li>
+		{% empty %}
+		<p>There is no url on your list.</p>
+		{% endfor %}
+	</ul>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block content %}
+	<p><a href="{% url 'monitoring:monitoring_url' %}">Back to monitoring</a></p>
+	<h2>Delete website:</h2>
+	<p>Do you really want to delete this website?</p>
+	<form method="post" action="{% url 'monitoring:delete_website_url' website.id %}">
+		{% csrf_token %}
+		<button name="submit">Yes</button>
+	</form>
+		<a href="{% url 'monitoring:monitoring_url' %}"><button>No</button></a>
+{% endblock content %}

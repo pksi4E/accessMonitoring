@@ -1,0 +1,18 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block sciezka %}
+	<p>
+		<a href="{% url 'monitoring:monitoring_url' %}">All websites</a>
+		<a href="{% url 'monitoring:with_errors_url' %}">With errors</a>
+	</p>
+{% endblock sciezka %}
+{% block content %}
+	<h2>Websites with errors:</h2>
+	<ul>
+		{% for site in error_websites %}
+			<li>{{ site.site_url }} {{ site.is_error }}</li>
+		{% empty %}
+			<li>No websites with errors.</li>
+		{% endfor %}
+	</ul>
+{% endblock content %}

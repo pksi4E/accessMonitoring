@@ -1,0 +1,31 @@
+{% extends 'monitoringApp/base.html' %}
+
+{% block content %}
+<ol>
+	{% for website in websites %}
+	<li>
+        {{ website.id }} |
+        <span class="my_url">{{ website.site_url }}</span> |
+        time interval: {{ website.time_interval }}
+        
+	<form action="changeWebsite" method="post">
+		'/home/pksi4e/Desktop/gitProjects/accessMonitoring/monitoringApp/forms.py' 
+	</form>
+	<!--button id="modifyUrlOnList">Modify</button-->
+        <!--button id="deleteUrlFromList">Delete</button-->
+    </li>
+	{% empty %}
+	<li>There is no url on your list.</li>
+	{% endfor %}
+</ol>
+<h3>Add website:</h3>
+<form method="post">
+    {% csrf_token %}
+    <input id="inputUrl" name="urlToAdd" type="text" placeholder="url">
+    <input id="inputTimeInterval" name="timeIntervalToAdd" type="text" placeholder="time interval">
+    <input id="submitUrl" type="submit">
+</form>
+<div class="proba">
+    <p>Animacjaa</p>
+</div>
+{% endblock %}

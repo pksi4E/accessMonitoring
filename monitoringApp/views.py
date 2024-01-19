@@ -14,7 +14,8 @@ from accessMonitoring.celery import app
 from django_celery_beat.models import PeriodicTask, IntervalSchedule
 
 def index (request):
-	return render(request, 'monitoringApp/index.html')
+	# przekierowanie do strony z monitoringiem
+	return monitoring(request)
 
 def monitoring (request):
 	context = {'websites': Website.objects.all()}

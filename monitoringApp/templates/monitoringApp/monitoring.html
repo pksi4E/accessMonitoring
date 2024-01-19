@@ -8,19 +8,19 @@
 {% endblock sciezka %}
 {% block content %}
 	<h2>Websites:</h2>
-	<p><a href="{% url 'monitoring:add_website_url' %}">Add website</a></p>
+	<p><a href="{% url 'monitoring:add_website_url' %}" class="link-primary link-offset-2 link-underline-opacity-50">Add website</a></p>
 	<ul>
 		{% for website in websites %}
 		<li>
 	        {{ website.id }} |
-	        <a href="{% url 'monitoring:website_history_url' website.id %}"><span class="my_url">{{ website.site_url }}</span></a> |
+	        <a href="{% url 'monitoring:website_history_url' website.id %}" class="link-primary"><span class="my_url">{{ website.site_url }}</span></a> |
 	        time interval: {{ website.time_interval }}
 	        
 			<a href="{% url 'monitoring:modify_website_url' website.id %}">
-				<button>Modify</button>
+				<button class="btn btn-outline-warning">Modify</button>
 			</a>
 			<a href="{% url 'monitoring:delete_website_url' website.id %}">
-				<button>Delete</button>
+				<button class="btn btn-outline-danger">Delete</button>
 			</a>
 	    </li>
 		{% empty %}

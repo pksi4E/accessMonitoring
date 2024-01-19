@@ -6,7 +6,7 @@
 
 Application uses **sqlite** database.
 
-After downloading all the code and placing it in *accessMonitoring* folder, make sure you have **django-celery-beat** module and **celery** installed,
+After downloading all the code and placing it in *accessMonitoring* folder, make sure you have **django-celery-beat**, **celery-progress** and **celery** modules installed,
 and in the terminal enter the following commands:
 
 ```python

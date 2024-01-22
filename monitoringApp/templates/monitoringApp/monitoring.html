@@ -13,8 +13,11 @@
 		{% for website in websites %}
 		<li>
 	        {{ website.id }} |
-	        <a href="{% url 'monitoring:website_history_url' website.id %}" class="link-primary"><span class="my_url">{{ website.site_url }}</span></a> |
-	        time interval: {{ website.time_interval }}
+	        <a href="{% url 'monitoring:website_history_url' website.id %}" class="link-primary">
+				<span class="my_url">{{ website.site_url }}</span>
+			</a> |
+	        <span class="page_info">Time Interval:</span> {{ website.time_interval }} min |
+			<span class="page_info">Status:</span> <span class="status_code">{{ website.status_code }}</span>
 	        
 			<a href="{% url 'monitoring:modify_website_url' website.id %}">
 				<button class="btn btn-outline-warning">Modify</button>

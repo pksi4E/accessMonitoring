@@ -3,7 +3,8 @@ h1 {
 }
 .my_url {
 	font-weight: italic;
-	color: purple;
+	color: rgb(201, 34, 201);
+	text-decoration: none;
 }
 div {
 	color: blue;
@@ -12,4 +13,9 @@ div {
 }
 #appName {
 	font-family: Verdana, sans-serif;
+}
+
+.page_info {
+	font-weight: bold;
+	text-decoration: none;
 }
